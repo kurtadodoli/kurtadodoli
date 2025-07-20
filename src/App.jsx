@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import Hero from './components/Hero'
 import Character from './components/Character'
+import milkywayImg from './assets/milkyway.png'
+import saturnImg from './assets/saturn.png'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
@@ -109,6 +111,17 @@ function App() {
         </div>
         <p className="copyright">© 2025 Kurt Adodoli</p>
       </footer>
+      
+      {/* Milky Way Image */}
+      <div className="milkyway-container">
+        <img src={milkywayImg} alt="Milky Way" className="milkyway-image" />
+      </div>
+      
+      {/* Saturn Image */}
+      <div className="saturn-container">
+        <img src={saturnImg} alt="Saturn" className="saturn-image" />
+      </div>
+      
       <Character />
     </div>
   )

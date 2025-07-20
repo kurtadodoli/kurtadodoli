@@ -537,3 +537,80 @@ body {
     height: 40px;
   }
 }
+
+ 
+ /* Milky Way Image Styles */
+.milkyway-container {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 2rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.milkyway-image {
+  width: 200px;
+  height: auto;
+  opacity: 0.6;
+  filter: brightness(0.8) contrast(1.2);
+  transition: all 0.3s ease;
+}
+
+.milkyway-image:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .milkyway-container {
+    bottom: 0.25rem;
+    right: 1rem;
+  }
+  
+  .milkyway-image {
+    width: 120px;
+  }
+}
+
+/* Saturn Image Styles */
+.saturn-container {
+  position: fixed;
+  bottom: 0.5rem;
+  left: 2rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.saturn-image {
+  width: 150px;
+  height: auto;
+  opacity: 0.7;
+  filter: brightness(0.9) contrast(1.1);
+  transition: all 0.3s ease;
+  animation: saturnFloat 6s ease-in-out infinite;
+}
+
+.saturn-image:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+
+@keyframes saturnFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-8px) rotate(2deg); 
+  }
+}
+
+@media (max-width: 768px) {
+  .saturn-container {
+    bottom: 0.25rem;
+    left: 1rem;
+  }
+  
+  .saturn-image {
+    width: 100px;
+  }
+}
