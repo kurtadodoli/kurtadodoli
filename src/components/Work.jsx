@@ -1,5 +1,8 @@
 import './Work.css'
 import { playClickSound } from '../utils/soundUtils'
+import sfcImage from '../assets/sfc-sample.png'
+import humbleBeginningsImage from '../assets/ourhumblebeginnings.png'
+import agroSortImage from '../assets/AgroSort.png'
 
 function Work({ setActiveSection }) {
   const handleBackClick = () => {
@@ -9,21 +12,21 @@ function Work({ setActiveSection }) {
   const projects = [
     {
       id: 1,
-      image: '/src/assets/sfc-sample.png',
+      image: sfcImage,
       title: 'Success Comes From Failure: Product Management System for Seven Four Clothing',
       description: 'We developed this Web-Based Product Management System for our Final Project for Software Engineering. We also got to meet the owner of Seven Four Clothing and he was very impressed with our work and gave us free t-shirts! :D',
       technologies: ['React JS', 'Node.js', 'MySQL']
     },
     {
       id: 2,
-      image: '/src/assets/ourhumblebeginnings.png',
+      image: humbleBeginningsImage,
       title: 'Our Humble Beginnings App',
       description: 'I developed this Mobile Application out of passion for the cafe since i really loved the place. I usually hangout there with my friend who worked there and it is my comfort place for studying/coding!',
       technologies: ['Flutter', 'Supabase']
     },
     {
       id: 3,
-      image: '/src/assets/AgroSort.png',
+      image: agroSortImage,
       title: 'Agro Sort',
       description: 'This a game that i developed for Data Structures and Algorithms in my Sophmore year. I really don\'t have any knowledge in making video games but this contributed so much for my experience as a developer.',
       technologies: ['Java']
