@@ -70,7 +70,7 @@ function Work({ setActiveSection }) {
                     <circle cx="8.5" cy="8.5" r="1.5"/>
                     <polyline points="21,15 16,10 5,21"/>
                   </svg>
-                  <span>Image: {project.image.split('/').pop()}</span>
+                  <span>Image: {typeof project.image === 'string' ? project.image.split('/').pop() : 'project-image.png'}</span>
                 </div>
               </div>
               
