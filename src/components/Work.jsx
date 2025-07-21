@@ -14,7 +14,7 @@ function Work({ setActiveSection }) {
       id: 1,
       image: sfcImage,
       title: 'Success Comes From Failure: Product Management System for Seven Four Clothing',
-      description: 'We developed this Web-Based Product Management System for our Final Project for Software Engineering. We also got to meet the owner of Seven Four Clothing and he was very impressed with our work and gave us free t-shirts! :D',
+      description: 'We developed this Web-Based Product Management System for our Final Project in Software Engineering. We also got to meet the owner of Seven Four Clothing and he was very impressed with our work and gave us free t-shirts! :D',
       technologies: ['React JS', 'Node.js', 'MySQL']
     },
     {
