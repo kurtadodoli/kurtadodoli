@@ -1,93 +1,140 @@
 import { useState } from 'react'
 import './App.css'
 import Hero from './components/Hero'
-import Character from './components/Character'
-import milkywayImg from './assets/milkyway.png'
-import saturnImg from './assets/saturn.png'
+import About from './components/About'
+import Links from './components/Links'
+import Contact from './components/Contact'
+import Work from './components/Work'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
 
   return (
     <div className="app">
-      {/* Diamond Stars */}
+      {/* Diamond Stars Background */}
       <div className="diamond-stars">
-        <div className="diamond-star size-large">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-small" style={{top: '10%', left: '5%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-medium">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-medium" style={{top: '15%', left: '20%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-small">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-large" style={{top: '8%', left: '35%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-large">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-small" style={{top: '25%', left: '15%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-small">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-medium" style={{top: '30%', left: '45%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-medium">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-small" style={{top: '20%', left: '60%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-small">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-large" style={{top: '35%', left: '25%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-large">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-medium" style={{top: '40%', left: '70%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-medium">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-small" style={{top: '45%', left: '10%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-small">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-large" style={{top: '50%', left: '85%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-medium">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-medium" style={{top: '55%', left: '35%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-small">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-small" style={{top: '60%', left: '55%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-large">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-large" style={{top: '65%', left: '15%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-small">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-medium" style={{top: '70%', left: '75%'}}>
+          <div className="core"></div>
         </div>
-        <div className="diamond-star size-medium">
-          <div className="ray-horizontal"></div>
-          <div className="ray-vertical"></div>
+        <div className="diamond-star diamond-star-small" style={{top: '75%', left: '40%'}}>
+          <div className="core"></div>
         </div>
-      </div>
-      
-      <div className="top-bar">
-        <div className="top-controls">
-          <div className="control-btn moon">🌙</div>
-          <div className="control-btn sound">🔊</div>
+        <div className="diamond-star diamond-star-large" style={{top: '80%', left: '60%'}}>
+          <div className="core"></div>
         </div>
-        <div className="star-decoration">⭐</div>
+        <div className="diamond-star diamond-star-medium" style={{top: '85%', left: '20%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-small" style={{top: '90%', left: '80%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-medium" style={{top: '12%', left: '75%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-large" style={{top: '28%', left: '88%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-small" style={{top: '38%', left: '3%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-medium" style={{top: '48%', left: '92%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-large" style={{top: '58%', left: '7%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-small" style={{top: '68%', left: '95%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-medium" style={{top: '78%', left: '12%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-large" style={{top: '88%', left: '50%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-small" style={{top: '5%', left: '50%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-medium" style={{top: '95%', left: '5%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-large" style={{top: '22%', left: '78%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-small" style={{top: '32%', left: '65%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-medium" style={{top: '42%', left: '30%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-large" style={{top: '52%', left: '18%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-small" style={{top: '62%', left: '82%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-medium" style={{top: '72%', left: '48%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-large" style={{top: '82%', left: '35%'}}>
+          <div className="core"></div>
+        </div>
+        <div className="diamond-star diamond-star-small" style={{top: '92%', left: '72%'}}>
+          <div className="core"></div>
+        </div>
       </div>
       
       <div className="main-window">
         <div className="window-header">
-          <span className="window-title">home</span>
+          <span className="window-title">{activeSection}</span>
         </div>
         <div className="window-content">
-          <Hero activeSection={activeSection} setActiveSection={setActiveSection} />
+          <div className="content-container" key={activeSection}>
+            {activeSection === 'home' && <Hero activeSection={activeSection} setActiveSection={setActiveSection} />}
+            {activeSection === 'about' && <About setActiveSection={setActiveSection} />}
+            {activeSection === 'links' && <Links setActiveSection={setActiveSection} />}
+            {activeSection === 'work' && <Work setActiveSection={setActiveSection} />}
+            {activeSection === 'contact' && <Contact setActiveSection={setActiveSection} />}
+          </div>
         </div>
       </div>
 
@@ -111,18 +158,6 @@ function App() {
         </div>
         <p className="copyright">© 2025 Kurt Adodoli</p>
       </footer>
-      
-      {/* Milky Way Image */}
-      <div className="milkyway-container">
-        <img src={milkywayImg} alt="Milky Way" className="milkyway-image" />
-      </div>
-      
-      {/* Saturn Image */}
-      <div className="saturn-container">
-        <img src={saturnImg} alt="Saturn" className="saturn-image" />
-      </div>
-      
-      <Character />
     </div>
   )
 }

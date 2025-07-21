@@ -1,0 +1,285 @@
+.links-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: white;
+  line-height: 1.6;
+  animation: slideInCard 0.6s ease-out;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.back-button:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.4);
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.back-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.2);
+}
+
+@keyframes slideInCard {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.links-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+}
+
+.links-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.links-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-weight: 300;
+}
+
+/* Custom scrollbar for the links card */
+.links-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.links-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.links-card::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.3);
+  border-radius: 3px;
+}
+
+.links-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.5);
+}
+
+.links-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.social-link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.social-link-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--link-color, #667eea) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.social-link-card:hover::before {
+  opacity: 0.1;
+}
+
+.social-link-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--link-color, #667eea);
+  box-shadow: 
+    0 12px 32px rgba(0, 0, 0, 0.3),
+    0 0 24px var(--link-color, #667eea);
+}
+
+.social-icon {
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.social-link-card:hover .social-icon {
+  color: var(--link-color, #667eea);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px var(--link-color, #667eea));
+}
+
+.social-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.social-link-card:hover .social-name {
+  color: var(--link-color, #667eea);
+  font-weight: 600;
+}
+
+/* Individual platform colors for better distinction */
+.social-link-card:nth-child(1) {
+  --link-color: #E4405F; /* Instagram */
+}
+
+.social-link-card:nth-child(2) {
+  --link-color: #6cc644; /* GitHub */
+}
+
+.social-link-card:nth-child(3) {
+  --link-color: #0077B5; /* LinkedIn */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .links-card {
+    margin: 1rem;
+    padding: 1.5rem;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+  
+  .links-content {
+    padding-bottom: 2rem;
+  }
+  
+  .links-title {
+    font-size: 2rem;
+  }
+  
+  .social-links-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 300px;
+  }
+  
+  .social-link-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .links-card {
+    margin: 0.5rem;
+    padding: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .links-content {
+    padding-bottom: 2rem;
+  }
+  
+  .links-title {
+    font-size: 1.8rem;
+  }
+  
+  .links-subtitle {
+    font-size: 1rem;
+  }
+  
+  .links-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  
+  .social-links-grid {
+    gap: 1rem;
+    max-width: 280px;
+  }
+  
+  .social-link-card {
+    padding: 1.2rem 0.8rem;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-name {
+    font-size: 0.9rem;
+  }
+}
+
+/* Slide out animation for when switching sections */
+.links-card.slide-out {
+  animation: slideOutCard 0.4s ease-in forwards;
+}
+
+@keyframes slideOutCard {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}

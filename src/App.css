@@ -4,17 +4,11 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  overflow-x: hidden;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+  font-size: 16px;
+  zoom: 1;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -65,21 +59,21 @@ body {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.8) 0%, transparent 70%) 15px 25px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.6) 0%, transparent 70%) 45px 65px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.4) 0%, transparent 70%) 85px 35px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.7) 0%, transparent 70%) 125px 75px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.3) 0%, transparent 70%) 155px 25px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.5) 0%, transparent 70%) 195px 115px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.4) 0%, transparent 70%) 45px 145px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.6) 0%, transparent 70%) 175px 45px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.3) 0%, transparent 70%) 25px 95px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.5) 0%, transparent 70%) 105px 125px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.4) 0%, transparent 70%) 65px 175px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.7) 0%, transparent 70%) 135px 15px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.3) 0%, transparent 70%) 185px 85px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.6) 0%, transparent 70%) 75px 55px,
-    radial-gradient(circle 0.5px, rgba(255,255,255,0.4) 0%, transparent 70%) 165px 135px;
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.8) 0%, transparent 70%) 15px 25px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.6) 0%, transparent 70%) 45px 65px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.4) 0%, transparent 70%) 85px 35px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.7) 0%, transparent 70%) 125px 75px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.3) 0%, transparent 70%) 155px 25px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.5) 0%, transparent 70%) 195px 115px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.4) 0%, transparent 70%) 45px 145px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.6) 0%, transparent 70%) 175px 45px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.3) 0%, transparent 70%) 25px 95px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.5) 0%, transparent 70%) 105px 125px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.4) 0%, transparent 70%) 65px 175px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.7) 0%, transparent 70%) 135px 15px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.3) 0%, transparent 70%) 185px 85px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.6) 0%, transparent 70%) 75px 55px,
+    radial-gradient(circle 2.5px, rgba(255,255,255,0.4) 0%, transparent 70%) 165px 135px;
   background-repeat: repeat;
   background-size: 200px 180px;
   pointer-events: none;
@@ -87,7 +81,7 @@ body {
   z-index: 1;
 }
 
-/* Four-pointed stars with circular halo like the reference */
+/* Four-pointed stars with cross-shaped rays like the reference */
 .app .diamond-stars {
   position: absolute;
   top: 0;
@@ -100,101 +94,191 @@ body {
 
 .app .diamond-star {
   position: absolute;
-  width: 20px;
-  height: 20px;
   animation: sparkle 4s ease-in-out infinite;
 }
 
-/* Central bright core */
-.app .diamond-star::before {
-  content: '';
+/* Central bright core with circular halo */
+.app .diamond-star .core {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 4px;
   height: 4px;
-  background: rgba(255, 255, 255, 1);
+  background: radial-gradient(circle, 
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(255, 255, 255, 0.9) 20%, 
+    rgba(255, 255, 200, 0.6) 60%, 
+    transparent 100%);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 
-    0 0 8px rgba(255, 255, 255, 1),
-    0 0 16px rgba(255, 230, 120, 0.8),
-    0 0 24px rgba(255, 200, 80, 0.6),
-    0 0 32px rgba(255, 180, 60, 0.4);
+    0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 16px rgba(255, 255, 200, 0.4),
+    0 0 25px rgba(255, 255, 150, 0.6),
+    0 0 35px rgba(200, 255, 150, 0.3);
   z-index: 3;
 }
 
-/* Circular halo around the star */
+/* Circular halo ring around the star */
+.app .diamond-star .core::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(200, 255, 150, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, 
+    transparent 70%, 
+    rgba(200, 255, 150, 0.2) 80%, 
+    rgba(150, 255, 100, 0.3) 90%, 
+    transparent 100%);
+  box-shadow: 
+    0 0 10px rgba(200, 255, 150, 0.5),
+    inset 0 0 6px rgba(150, 255, 100, 0.2);
+  z-index: 1;
+}
+
+/* Horizontal ray - thicker at center, tapered to points */
+.app .diamond-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 6px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 200, 0.3) 20%, 
+    rgba(255, 255, 255, 0.8) 45%, 
+    rgba(255, 255, 255, 1) 50%, 
+    rgba(255, 255, 255, 0.8) 55%, 
+    rgba(255, 255, 200, 0.3) 80%, 
+    transparent 100%);
+  transform: translate(-50%, -50%);
+  clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  box-shadow: 
+    0 0 6px rgba(255, 255, 255, 0.6),
+    0 0 12px rgba(255, 255, 200, 0.3);
+  z-index: 2;
+}
+
+/* Vertical ray - thicker at center, tapered to points */
 .app .diamond-star::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 16px;
-  height: 16px;
-  border: 1px solid rgba(255, 230, 120, 0.6);
-  border-radius: 50%;
+  width: 6px;
+  height: 40px;
+  background: linear-gradient(0deg, 
+    transparent 0%, 
+    rgba(255, 255, 200, 0.3) 20%, 
+    rgba(255, 255, 255, 0.8) 45%, 
+    rgba(255, 255, 255, 1) 50%, 
+    rgba(255, 255, 255, 0.8) 55%, 
+    rgba(255, 255, 200, 0.3) 80%, 
+    transparent 100%);
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, transparent 60%, rgba(255, 230, 120, 0.3) 70%, rgba(255, 200, 80, 0.5) 85%, transparent 100%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   box-shadow: 
-    0 0 12px rgba(255, 230, 120, 0.7),
-    inset 0 0 8px rgba(255, 200, 80, 0.4);
+    0 0 6px rgba(255, 255, 255, 0.6),
+    0 0 12px rgba(255, 255, 200, 0.3);
   z-index: 2;
 }
 
-/* Horizontal ray */
-.app .diamond-star .ray-horizontal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8) 45%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 55%, transparent);
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 6px rgba(255, 230, 120, 0.6);
-  z-index: 1;
+/* Small star sizes */
+.app .diamond-star-small .core {
+  width: 3px;
+  height: 3px;
 }
 
-/* Vertical ray */
-.app .diamond-star .ray-vertical {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1px;
-  height: 50px;
-  background: linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.8) 45%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 55%, transparent);
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 6px rgba(255, 230, 120, 0.6);
-  z-index: 1;
+.app .diamond-star-small .core::before {
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(200, 255, 150, 0.3);
+  box-shadow: 
+    0 0 8px rgba(200, 255, 150, 0.4),
+    inset 0 0 4px rgba(150, 255, 100, 0.2);
 }
 
-.app .diamond-star:nth-child(1) { top: 8%; left: 12%; animation-delay: 0s; }
-.app .diamond-star:nth-child(2) { top: 15%; left: 85%; animation-delay: 1s; }
-.app .diamond-star:nth-child(3) { top: 25%; left: 45%; animation-delay: 2s; }
-.app .diamond-star:nth-child(4) { top: 35%; left: 75%; animation-delay: 3s; }
-.app .diamond-star:nth-child(5) { top: 40%; left: 25%; animation-delay: 0.5s; }
-.app .diamond-star:nth-child(6) { top: 50%; left: 65%; animation-delay: 1.5s; }
-.app .diamond-star:nth-child(7) { top: 60%; left: 15%; animation-delay: 2.5s; }
-.app .diamond-star:nth-child(8) { top: 65%; left: 90%; animation-delay: 3.5s; }
-.app .diamond-star:nth-child(9) { top: 75%; left: 35%; animation-delay: 0.8s; }
-.app .diamond-star:nth-child(10) { top: 85%; left: 55%; animation-delay: 1.8s; }
-.app .diamond-star:nth-child(11) { top: 20%; left: 60%; animation-delay: 2.8s; }
-.app .diamond-star:nth-child(12) { top: 45%; left: 5%; animation-delay: 3.8s; }
-.app .diamond-star:nth-child(13) { top: 70%; left: 80%; animation-delay: 0.3s; }
-.app .diamond-star:nth-child(14) { top: 90%; left: 20%; animation-delay: 1.3s; }
-.app .diamond-star:nth-child(15) { top: 12%; left: 30%; animation-delay: 2.3s; }
-
-/* Size variations */
-.app .diamond-star.size-large {
-  transform: scale(1.5);
+.app .diamond-star-small::before {
+  width: 25px;
+  height: 4px;
+  clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
 }
 
-.app .diamond-star.size-medium {
-  transform: scale(1);
+.app .diamond-star-small::after {
+  width: 4px;
+  height: 25px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-.app .diamond-star.size-small {
-  transform: scale(0.6);
+/* Medium star sizes (default) */
+.app .diamond-star-medium .core {
+  width: 4px;
+  height: 4px;
+}
+
+.app .diamond-star-medium .core::before {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(200, 255, 150, 0.4);
+  box-shadow: 
+    0 0 10px rgba(200, 255, 150, 0.5),
+    inset 0 0 6px rgba(150, 255, 100, 0.2);
+}
+
+.app .diamond-star-medium::before {
+  width: 40px;
+  height: 6px;
+  clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+}
+
+.app .diamond-star-medium::after {
+  width: 6px;
+  height: 40px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Large star sizes */
+.app .diamond-star-large .core {
+  width: 6px;
+  height: 6px;
+  box-shadow: 
+    0 0 12px rgba(255, 255, 255, 0.8),
+    0 0 24px rgba(255, 255, 200, 0.4),
+    0 0 35px rgba(255, 255, 150, 0.6),
+    0 0 50px rgba(200, 255, 150, 0.3);
+}
+
+.app .diamond-star-large .core::before {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(200, 255, 150, 0.5);
+  box-shadow: 
+    0 0 15px rgba(200, 255, 150, 0.6),
+    inset 0 0 8px rgba(150, 255, 100, 0.3);
+}
+
+.app .diamond-star-large::before {
+  width: 60px;
+  height: 8px;
+  clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  box-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.6),
+    0 0 16px rgba(255, 255, 200, 0.3);
+}
+
+.app .diamond-star-large::after {
+  width: 8px;
+  height: 60px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  box-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.6),
+    0 0 16px rgba(255, 255, 200, 0.3);
 }
 
 /* Adjust sparkle animation to work with size variations */
@@ -215,18 +299,18 @@ body {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.5) 0%, transparent 80%) 30px 40px,
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.3) 0%, transparent 80%) 70px 80px,
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.4) 0%, transparent 80%) 110px 20px,
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.2) 0%, transparent 80%) 150px 100px,
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.3) 0%, transparent 80%) 10px 120px,
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.4) 0%, transparent 80%) 90px 160px,
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.2) 0%, transparent 80%) 130px 60px,
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.5) 0%, transparent 80%) 170px 140px,
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.3) 0%, transparent 80%) 50px 10px,
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.2) 0%, transparent 80%) 190px 30px,
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.4) 0%, transparent 80%) 20px 170px,
-    radial-gradient(circle 0.3px, rgba(255,255,255,0.3) 0%, transparent 80%) 160px 190px;
+    radial-gradient(circle 2px, rgba(255,255,255,0.5) 0%, transparent 80%) 30px 40px,
+    radial-gradient(circle 2px, rgba(255,255,255,0.3) 0%, transparent 80%) 70px 80px,
+    radial-gradient(circle 2px, rgba(255,255,255,0.4) 0%, transparent 80%) 110px 20px,
+    radial-gradient(circle 2px, rgba(255,255,255,0.2) 0%, transparent 80%) 150px 100px,
+    radial-gradient(circle 2px, rgba(255,255,255,0.3) 0%, transparent 80%) 10px 120px,
+    radial-gradient(circle 2px, rgba(255,255,255,0.4) 0%, transparent 80%) 90px 160px,
+    radial-gradient(circle 2px, rgba(255,255,255,0.2) 0%, transparent 80%) 130px 60px,
+    radial-gradient(circle 2px, rgba(255,255,255,0.5) 0%, transparent 80%) 170px 140px,
+    radial-gradient(circle 2px, rgba(255,255,255,0.3) 0%, transparent 80%) 50px 10px,
+    radial-gradient(circle 2px, rgba(255,255,255,0.2) 0%, transparent 80%) 190px 30px,
+    radial-gradient(circle 2px, rgba(255,255,255,0.4) 0%, transparent 80%) 20px 170px,
+    radial-gradient(circle 2px, rgba(255,255,255,0.3) 0%, transparent 80%) 160px 190px;
   background-repeat: repeat;
   background-size: 200px 200px;
   pointer-events: none;
@@ -235,55 +319,6 @@ body {
 }
 
 
-
-.top-bar {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  right: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
-}
-
-.top-controls {
-  display: flex;
-  gap: 1rem;
-}
-
-.control-btn {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(10, 10, 35, 0.8);
-  border: 2px solid rgba(120, 119, 198, 0.4);
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.control-btn:hover {
-  background: rgba(120, 119, 198, 0.3);
-  border-color: rgba(120, 119, 198, 0.7);
-  transform: scale(1.1);
-  box-shadow: 0 0 25px rgba(120, 119, 198, 0.5);
-}
-
-.star-decoration {
-  font-size: 2rem;
-  animation: starFloat 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 20px rgba(255, 235, 59, 0.8));
-}
-
-@keyframes starFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(180deg); }
-}
 
 .main-window {
   width: 100%;
@@ -325,6 +360,82 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section transition animations */
+.section-enter {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.section-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-exit-active {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.4s ease-in, transform 0.4s ease-in;
+}
+
+/* Content container for smooth transitions */
+.content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: slideInContent 0.6s ease-out;
+}
+
+@keyframes slideInContent {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Placeholder sections styling */
+.placeholder-section {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.placeholder-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.placeholder-section p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
 }
 
 .footer {
@@ -443,15 +554,57 @@ body {
   }
 }
 
+@media (max-width: 480px) {
+  .app {
+    padding: 0.5rem;
+  }
+  
+  .main-window {
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    height: 90vh;
+    max-height: none;
+  }
+  
+  .window-content {
+    padding: 1rem;
+    min-height: 350px;
+  }
+  
+  .window-header {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .footer {
+    padding: 1rem;
+  }
+  
+  .social-links {
+    gap: 0.8rem;
+  }
+  
+  .social-link {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .copyright {
+    font-size: 0.8rem;
+  }
+}
+
 .container {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 1.5rem;
   position: relative;
   z-index: 1;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .social-links {
@@ -541,10 +694,10 @@ body {
  
  /* Milky Way Image Styles */
 .milkyway-container {
-  position: fixed;
-  bottom: 0.5rem;
-  right: 2rem;
-  z-index: 5;
+  position: fixed !important;
+  bottom: 10px !important;
+  right: 10px !important;
+  z-index: 50 !important;
   pointer-events: none;
 }
 
@@ -563,8 +716,8 @@ body {
 
 @media (max-width: 768px) {
   .milkyway-container {
-    bottom: 0.25rem;
-    right: 1rem;
+    bottom: 10px;
+    right: 10px;
   }
   
   .milkyway-image {
@@ -575,10 +728,13 @@ body {
 /* Saturn Image Styles */
 .saturn-container {
   position: fixed;
-  bottom: 0.5rem;
-  left: 2rem;
+  top: 2rem;
+  right: 2rem;
   z-index: 5;
   pointer-events: none;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
 }
 
 .saturn-image {
@@ -588,6 +744,10 @@ body {
   filter: brightness(0.9) contrast(1.1);
   transition: all 0.3s ease;
   animation: saturnFloat 6s ease-in-out infinite;
+  /* Position the image to crop out the star */
+  position: relative;
+  top: 10px;
+  right: 30px;
 }
 
 .saturn-image:hover {
@@ -606,11 +766,110 @@ body {
 
 @media (max-width: 768px) {
   .saturn-container {
-    bottom: 0.25rem;
-    left: 1rem;
+    top: 1rem;
+    right: 1rem;
   }
   
   .saturn-image {
     width: 100px;
+  }
+}
+
+/* Blackhole positioning */
+.blackhole-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.blackhole-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.blackhole-image:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .blackhole-container {
+    width: 80px;
+    height: 80px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .blackhole-image {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Shining Star Animations */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  75% {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    filter: brightness(1) blur(0px);
+  }
+  50% {
+    filter: brightness(1.4) blur(0.5px);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    box-shadow: 
+      0 0 12px rgba(255, 255, 100, 0.8),
+      0 0 20px rgba(120, 80, 200, 0.5);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px rgba(255, 255, 100, 1),
+      0 0 35px rgba(120, 80, 200, 0.8),
+      0 0 50px rgba(255, 255, 255, 0.6);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 
+      0 0 8px rgba(255, 255, 255, 1),
+      0 0 15px rgba(180, 120, 255, 0.8),
+      0 0 22px rgba(150, 100, 255, 0.6);
+  }
+  50% {
+    box-shadow: 
+      0 0 15px rgba(255, 255, 255, 1),
+      0 0 30px rgba(180, 120, 255, 1),
+      0 0 45px rgba(150, 100, 255, 0.8),
+      0 0 60px rgba(120, 80, 200, 0.6);
   }
 }
