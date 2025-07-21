@@ -3,21 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   font-size: 16px;
   zoom: 1;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
-
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.6;
   color: #333;
   overflow-x: hidden;
 }
-
 .app {
   min-height: 100vh;
   background: 
@@ -35,7 +32,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 @keyframes galaxyShift {
   0%, 100% {
     background-position: 0% 0%, 0% 100%, 0% 0%, 0% 50%;
@@ -50,7 +46,6 @@ body {
     background-position: 75% 25%, 25% 75%, 75% 75%, 0% 50%;
   }
 }
-
 .app::before {
   content: '';
   position: absolute;
@@ -80,7 +75,6 @@ body {
   opacity: 0.7;
   z-index: 1;
 }
-
 /* Four-pointed stars with cross-shaped rays like the reference */
 .app .diamond-stars {
   position: absolute;
@@ -91,12 +85,10 @@ body {
   pointer-events: none;
   z-index: 1;
 }
-
 .app .diamond-star {
   position: absolute;
   animation: sparkle 4s ease-in-out infinite;
 }
-
 /* Central bright core with circular halo */
 .app .diamond-star .core {
   position: absolute;
@@ -118,7 +110,6 @@ body {
     0 0 35px rgba(200, 255, 150, 0.3);
   z-index: 3;
 }
-
 /* Circular halo ring around the star */
 .app .diamond-star .core::before {
   content: '';
@@ -140,7 +131,6 @@ body {
     inset 0 0 6px rgba(150, 255, 100, 0.2);
   z-index: 1;
 }
-
 /* Horizontal ray - thicker at center, tapered to points */
 .app .diamond-star::before {
   content: '';
@@ -164,7 +154,6 @@ body {
     0 0 12px rgba(255, 255, 200, 0.3);
   z-index: 2;
 }
-
 /* Vertical ray - thicker at center, tapered to points */
 .app .diamond-star::after {
   content: '';
@@ -188,13 +177,11 @@ body {
     0 0 12px rgba(255, 255, 200, 0.3);
   z-index: 2;
 }
-
 /* Small star sizes */
 .app .diamond-star-small .core {
   width: 3px;
   height: 3px;
 }
-
 .app .diamond-star-small .core::before {
   width: 14px;
   height: 14px;
@@ -203,25 +190,21 @@ body {
     0 0 8px rgba(200, 255, 150, 0.4),
     inset 0 0 4px rgba(150, 255, 100, 0.2);
 }
-
 .app .diamond-star-small::before {
   width: 25px;
   height: 4px;
   clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
 }
-
 .app .diamond-star-small::after {
   width: 4px;
   height: 25px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
-
 /* Medium star sizes (default) */
 .app .diamond-star-medium .core {
   width: 4px;
   height: 4px;
 }
-
 .app .diamond-star-medium .core::before {
   width: 20px;
   height: 20px;
@@ -230,19 +213,16 @@ body {
     0 0 10px rgba(200, 255, 150, 0.5),
     inset 0 0 6px rgba(150, 255, 100, 0.2);
 }
-
 .app .diamond-star-medium::before {
   width: 40px;
   height: 6px;
   clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
 }
-
 .app .diamond-star-medium::after {
   width: 6px;
   height: 40px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
-
 /* Large star sizes */
 .app .diamond-star-large .core {
   width: 6px;
@@ -253,7 +233,6 @@ body {
     0 0 35px rgba(255, 255, 150, 0.6),
     0 0 50px rgba(200, 255, 150, 0.3);
 }
-
 .app .diamond-star-large .core::before {
   width: 28px;
   height: 28px;
@@ -262,7 +241,6 @@ body {
     0 0 15px rgba(200, 255, 150, 0.6),
     inset 0 0 8px rgba(150, 255, 100, 0.3);
 }
-
 .app .diamond-star-large::before {
   width: 60px;
   height: 8px;
@@ -271,7 +249,6 @@ body {
     0 0 8px rgba(255, 255, 255, 0.6),
     0 0 16px rgba(255, 255, 200, 0.3);
 }
-
 .app .diamond-star-large::after {
   width: 8px;
   height: 60px;
@@ -280,7 +257,6 @@ body {
     0 0 8px rgba(255, 255, 255, 0.6),
     0 0 16px rgba(255, 255, 200, 0.3);
 }
-
 /* Adjust sparkle animation to work with size variations */
 @keyframes sparkle {
   0%, 100% {
@@ -290,7 +266,6 @@ body {
     opacity: 1;
   }
 }
-
 .app::after {
   content: '';
   position: absolute;
@@ -317,9 +292,6 @@ body {
   opacity: 0.4;
   z-index: 1;
 }
-
-
-
 .main-window {
   width: 100%;
   max-width: 1400px;
@@ -337,7 +309,6 @@ body {
   position: relative;
   z-index: 10;
 }
-
 .window-header {
   background: rgba(0, 0, 0, 0.4);
   padding: 1rem 2rem;
@@ -345,14 +316,12 @@ body {
   display: flex;
   align-items: center;
 }
-
 .window-title {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.1rem;
   font-weight: 500;
   text-shadow: 0 0 15px rgba(120, 119, 198, 0.5);
 }
-
 .window-content {
   padding: 2rem;
   height: calc(100% - 4rem);
@@ -363,30 +332,25 @@ body {
   position: relative;
   overflow: hidden;
 }
-
 /* Section transition animations */
 .section-enter {
   opacity: 0;
   transform: translateY(30px);
 }
-
 .section-enter-active {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
 .section-exit {
   opacity: 1;
   transform: translateY(0);
 }
-
 .section-exit-active {
   opacity: 0;
   transform: translateY(-30px);
   transition: opacity 0.4s ease-in, transform 0.4s ease-in;
 }
-
 /* Content container for smooth transitions */
 .content-container {
   width: 100%;
@@ -397,7 +361,6 @@ body {
   justify-content: center;
   animation: slideInContent 0.6s ease-out;
 }
-
 @keyframes slideInContent {
   from {
     opacity: 0;
@@ -408,7 +371,6 @@ body {
     transform: translateY(0);
   }
 }
-
 /* Placeholder sections styling */
 .placeholder-section {
   text-align: center;
@@ -422,7 +384,6 @@ body {
   max-width: 500px;
   margin: 0 auto;
 }
-
 .placeholder-section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -431,13 +392,11 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
 .placeholder-section p {
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
 }
-
 .footer {
   background: transparent;
   backdrop-filter: none;
@@ -451,14 +410,12 @@ body {
   z-index: 1;
   box-shadow: none;
 }
-
 .social-links {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .social-link {
   display: flex;
   align-items: center;
@@ -471,10 +428,8 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  
   position: relative;
 }
-
 .social-link::before {
   content: '';
   position: absolute;
@@ -490,11 +445,9 @@ body {
   transition: opacity 0.3s ease;
   animation: socialGlow 3s ease-in-out infinite;
 }
-
 .social-link:hover::before {
   opacity: 1;
 }
-
 .social-link:hover {
   background: rgba(120, 119, 198, 0.5);
   color: #ffd700;
@@ -504,96 +457,78 @@ body {
     0 5px 15px rgba(120, 119, 198, 0.3);
   border-color: rgba(120, 119, 198, 0.7);
 }
-
 @keyframes socialGlow {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
-
 .copyright {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
   margin: 0;
   text-shadow: 0 0 10px rgba(120, 119, 198, 0.4);
 }
-
 @media (max-width: 768px) {
   .app {
     padding: 1rem;
   }
-  
   .top-bar {
     top: 1rem;
     left: 1rem;
     right: 1rem;
   }
-  
   .main-window {
     margin-top: 4rem;
     margin-bottom: 8rem;
     height: 85vh;
     max-height: 800px;
   }
-  
   .window-content {
     padding: 1.5rem;
     min-height: 400px;
   }
-  
   .footer {
     padding: 1.5rem;
   }
-  
   .social-links {
     gap: 1rem;
   }
-  
   .social-link {
     width: 40px;
     height: 40px;
   }
 }
-
 @media (max-width: 480px) {
   .app {
     padding: 0.5rem;
   }
-  
   .main-window {
     margin-top: 3rem;
     margin-bottom: 6rem;
     height: 90vh;
     max-height: none;
   }
-  
   .window-content {
     padding: 1rem;
     min-height: 350px;
   }
-  
   .window-header {
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
   }
-  
   .footer {
     padding: 1rem;
   }
-  
   .social-links {
     gap: 0.8rem;
   }
-  
   .social-link {
     width: 36px;
     height: 36px;
   }
-  
   .copyright {
     font-size: 0.8rem;
   }
 }
-
 .container {
   flex: 1;
   display: flex;
@@ -606,14 +541,12 @@ body {
   max-width: 1000px;
   width: 100%;
 }
-
 .social-links {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin-bottom: 1rem;
 }
-
 .social-link {
   display: flex;
   align-items: center;
@@ -626,10 +559,8 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  
   position: relative;
 }
-
 .social-link::before {
   content: '';
   position: absolute;
@@ -645,11 +576,9 @@ body {
   transition: opacity 0.3s ease;
   animation: socialGlow 3s ease-in-out infinite;
 }
-
 .social-link:hover::before {
   opacity: 1;
 }
-
 .social-link:hover {
   background: rgba(120, 119, 198, 0.5);
   color: #ffd700;
@@ -659,40 +588,33 @@ body {
     0 5px 15px rgba(120, 119, 198, 0.3);
   border-color: rgba(120, 119, 198, 0.7);
 }
-
 @keyframes socialGlow {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
-
 .copyright {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
   margin: 0;
   text-shadow: 0 0 10px rgba(120, 119, 198, 0.4);
 }
-
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
   }
-  
   .footer {
     padding: 1.5rem;
   }
-  
   .social-links {
     gap: 1rem;
   }
-  
   .social-link {
     width: 40px;
     height: 40px;
   }
 }
 
- 
- /* Milky Way Image Styles */
+/* Milky Way Image Styles */
 .milkyway-container {
   position: fixed !important;
   bottom: 10px !important;
@@ -700,7 +622,6 @@ body {
   z-index: 50 !important;
   pointer-events: none;
 }
-
 .milkyway-image {
   width: 200px;
   height: auto;
@@ -708,23 +629,19 @@ body {
   filter: brightness(0.8) contrast(1.2);
   transition: all 0.3s ease;
 }
-
 .milkyway-image:hover {
   opacity: 0.8;
   transform: scale(1.05);
 }
-
 @media (max-width: 768px) {
   .milkyway-container {
     bottom: 10px;
     right: 10px;
   }
-  
   .milkyway-image {
     width: 120px;
   }
 }
-
 /* Saturn Image Styles */
 .saturn-container {
   position: fixed;
@@ -736,7 +653,6 @@ body {
   height: 120px;
   overflow: hidden;
 }
-
 .saturn-image {
   width: 150px;
   height: auto;
@@ -749,12 +665,10 @@ body {
   top: 10px;
   right: 30px;
 }
-
 .saturn-image:hover {
   opacity: 0.9;
   transform: scale(1.1);
 }
-
 @keyframes saturnFloat {
   0%, 100% { 
     transform: translateY(0px) rotate(0deg); 
@@ -763,18 +677,15 @@ body {
     transform: translateY(-8px) rotate(2deg); 
   }
 }
-
 @media (max-width: 768px) {
   .saturn-container {
     top: 1rem;
     right: 1rem;
   }
-  
   .saturn-image {
     width: 100px;
   }
 }
-
 /* Blackhole positioning */
 .blackhole-container {
   position: fixed;
@@ -787,7 +698,6 @@ body {
   justify-content: center;
   z-index: 100;
 }
-
 .blackhole-image {
   width: 120px;
   height: 120px;
@@ -795,12 +705,10 @@ body {
   opacity: 0.9;
   transition: all 0.3s ease;
 }
-
 .blackhole-image:hover {
   opacity: 1;
   transform: scale(1.1);
 }
-
 @media (max-width: 768px) {
   .blackhole-container {
     width: 80px;
@@ -808,13 +716,11 @@ body {
     bottom: 15px;
     right: 15px;
   }
-  
   .blackhole-image {
     width: 80px;
     height: 80px;
   }
 }
-
 /* Shining Star Animations */
 @keyframes sparkle {
   0%, 100% {
@@ -834,7 +740,6 @@ body {
     transform: scale(1.03);
   }
 }
-
 @keyframes shimmer {
   0%, 100% {
     filter: brightness(1) blur(0px);
@@ -843,7 +748,6 @@ body {
     filter: brightness(1.4) blur(0.5px);
   }
 }
-
 @keyframes twinkle {
   0%, 100% {
     box-shadow: 
@@ -857,7 +761,6 @@ body {
       0 0 50px rgba(255, 255, 255, 0.6);
   }
 }
-
 @keyframes pulse-glow {
   0%, 100% {
     box-shadow: 
