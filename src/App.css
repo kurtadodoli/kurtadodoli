@@ -5,7 +5,7 @@
 }
 html {
   font-size: 16px;
-  zoom: 1;
+  zoom: 0.85;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -28,6 +28,8 @@ body {
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
+  transform: scale(0.9);
+  transform-origin: center center;
   padding: 2rem;
   align-items: center;
   justify-content: center;
