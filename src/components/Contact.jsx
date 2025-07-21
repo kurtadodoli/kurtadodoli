@@ -1,11 +1,5 @@
 import './Contact.css'
-import { playClickSound } from '../            {/* Legs */}
-            <ellipse cx="42" cy="80" rx="4" ry="8" fill="white"/>
-            <ellipse cx="58" cy="80" rx="4" ry="8" fill="white"/>
-            
-            {/* Boots - simple dark shapes */}
-            <ellipse cx="42" cy="88" rx="3.5" ry="2.5" fill="#333"/>
-            <ellipse cx="58" cy="88" rx="3.5" ry="2.5" fill="#333"/>oundUtils'
+import { playClickSound } from '../utils/soundUtils'
 
 function Contact({ setActiveSection }) {
   const handleBackClick = () => {
